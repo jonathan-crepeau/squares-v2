@@ -60,3 +60,7 @@ nav p:first-child {
     flex-flow: row wrap;
     justify-content: center;
 }
+
+.timer-span {
+    color: yellow;
+}
