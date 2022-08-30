@@ -40,8 +40,30 @@ gameObject = {
             $(square).css('background-color', '#184A6E');
         }
     },
+    handleClick(event) {
+        const colors = $(event.target).css('background-color');
+        const colorNums = colors.substring(4, colors.length - 1).split(" ");
+        console.log(colorNums);
+        if (colorNums[2] === '154') {
+            gameObject.score++;
+            $('.score-span').html(`${gameObject.score}`);
+        } else {
+            gameObject.score--;
+            $('.score-span').html(`${gameObject.score}`);
+        }
+        $(event.target).remove();
+    }
 }
 
 
 // SECTION - Event Listeners
 $('.start-btn').on('click', gameObject.playGame);
+$(document).on('click', '.game-square', gameObject.handleClick);
+
+// $('.squares-container').on('click', () => {
+//     console.log($(event.target).css('background-color'));
+// })
+
+// $(document).on('click', '.game-square', () => {
+//     console.log('woop!');
+// })
