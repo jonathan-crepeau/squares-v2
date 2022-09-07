@@ -59,6 +59,7 @@ nav p:first-child {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin: 3% 5%;
 }
 
 .timer-span {
